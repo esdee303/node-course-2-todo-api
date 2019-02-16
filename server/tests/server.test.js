@@ -9,7 +9,7 @@ const todos = [
     { _id: new ObjectID(), text: "todo 1" },
     { _id: new ObjectID(), text: "todo 2" }
 ];
-
+/*
 beforeEach((done) => {
     Todo.remove({}).then(() => {
         return Todo.insertMany(todos);
@@ -93,4 +93,4 @@ describe('GET /todos/:id', () => {
             .end(done);
     });
 });
-
+*/
