@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect('process.env.MONGODB_URI', function() { /* dummy function */ })
     .then(() => {
-        return server.start();
+        console.log('ok');
     })
     .catch(err => { // mongoose connection error will be handled here
         console.error('App starting error:', err.stack);
