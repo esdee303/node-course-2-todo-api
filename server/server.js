@@ -47,13 +47,9 @@ app.get('/todos/:id', (req, res) => {
     })
 });
 
-
-if(!module.parent) {
-    app.listen(port, () => {
-        console.log(`Started on port ${port}`);
-    });
-}
-
+app.listen(port, () => {
+    console.log(`Started on port ${port}`);
+});
 
 module.exports = { app };
 
