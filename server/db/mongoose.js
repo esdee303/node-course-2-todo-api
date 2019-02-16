@@ -12,12 +12,20 @@ mongoose.Promise = global.Promise;
         process.exit(1);
     });*/
 
-    mongoose.connect(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@cluster0-shard-00-00-ftq1f.mongodb.net:27017,cluster0-shard-00-01-ftq1f.mongodb.net:27017,cluster0-shard-00-02-ftq1f.mongodb.net:27017/TodoApp?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true`,{
+/*    mongoose.connect(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@cluster0-shard-00-00-ftq1f.mongodb.net:27017,cluster0-shard-00-01-ftq1f.mongodb.net:27017,cluster0-shard-00-02-ftq1f.mongodb.net:27017/TodoApp?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true`,{
 useNewUrlParser: true, 
 }, function(error){
     console.log(error);
     console.log(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@cluster0-shard-00-00-ftq1f.mongodb.net:27017,cluster0-shard-00-01-ftq1f.mongodb.net:27017,cluster0-shard-00-02-ftq1f.mongodb.net:27017/TodoApp?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true`)
 
-});
+});*/
+
+mongoose.connect(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@cluster0-ftq1f.mongodb.net/test?retryWrites=true`,{
+    useNewUrlParser: true, 
+    }, function(error){
+        console.log(error);
+        console.log(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@c@cluster0-ftq1f.mongodb.net/test?retryWrites=true`)
+    
+    });
 
 module.exports = { mongoose };
