@@ -9,7 +9,8 @@ mongoose.Promise = global.Promise;
 
 
  mongoose.connect(`mongodb://esdee303:bdog2015@cluster0-shard-00-00-ftq1f.mongodb.net:27017/TodoApp?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true`
-  ,{ useNewUrlParser: true, }, function(error){        
+  ,{ useNewUrlParser: true, }, function(error){
+      console.log(error);
 });
 
 
