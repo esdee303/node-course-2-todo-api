@@ -9,7 +9,6 @@ var {User} = require('./models/user.js');
 
 var app = express();
 var port = process.env.PORT || 3000;
-port = (typeof port == "number") ? port : 3000;
 
 app.use(bodyParser.json());
 
