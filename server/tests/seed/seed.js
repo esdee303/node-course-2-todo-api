@@ -11,7 +11,7 @@ const userTwoId = new ObjectID();
 const users = [{ 
     _id: userOneId,
     email: 'sdf@quant.be', 
-    password: 'userOnePass',
+    password: '123456',
     tokens: [{
         access: 'auth',
         token: jwt.sign({_id: userOneId, access: 'auth'}, 'abc123').toString()
@@ -19,12 +19,16 @@ const users = [{
 }, { 
     _id: userTwoId,
     email: 'frt@com.com',
-    password: 'userTwoPass'
+    password: 'userTwoPass',
+    tokens: [{
+        access: 'auth',
+        token: jwt.sign({_id: userTwoId, access: 'auth'}, 'abc123').toString()
+    }]
 }];
 
 const todos = [
-    { _id: new ObjectID(), text: "take out the trash" },
-    { _id: new ObjectID(), text: "Rock and roll some more", completed: true, completedAt: 333 }
+    { _id: new ObjectID(), text: "take out the trash", _creator: userOneId },
+    { _id: new ObjectID(), text: "Rock and roll some more", completed: true, completedAt: 333, _creator: userTwoId }
 ];
 
 
